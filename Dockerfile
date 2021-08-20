@@ -51,11 +51,12 @@ COPY mopidy.conf /config/mopidy.conf.base
 # Copy the pulse-client configuratrion.
 COPY pulse-client.conf /etc/pulse/client.conf
 
+RUN groupadd -g 1000 pulse
 # Allows any user to run mopidy, but runs by default as a randomly generated UID/GID.
 ENV HOME=/var/lib/mopidy
 RUN set -ex \
- && usermod -G audio,sudo mopidy \
- && chown mopidy:audio -R $HOME /entrypoint.sh /config \
+ && usermod -g pulse -G audio,pulse,sudo mopidy \
+ && chown mopidy:pulse -R $HOME /entrypoint.sh /config \
  && chmod go+rwx -R $HOME /entrypoint.sh
 
 COPY --from=hairyhenderson/gomplate:v3.8.0-slim /gomplate /bin/gomplate

@@ -9,10 +9,8 @@ verify_ssl = true
 youtube-dl = "*"
 mopidy-iris = "*"
 mopidy-moped = "*"
-mopidy-gmusic = "*"
-mopidy-pandora = "*"
 mopidy-youtube = "*"
-mopidy-autoplay = "*"
+mopidy-jellyfin = "*"
 pyopenssl = "*"
 
 [requires]
