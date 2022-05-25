@@ -20,6 +20,8 @@ RUN set -ex \
 
 RUN set -ex \
  && curl -L https://apt.mopidy.com/mopidy.gpg | apt-key add - \
+ && mkdir -p /usr/local/share/keyrings \
+ && curl https://apt.mopidy.com/mopidy.gpg -o /usr/local/share/keyrings/mopidy-archive-keyring.gpg \
  && curl -L https://apt.mopidy.com/mopidy.list -o /etc/apt/sources.list.d/mopidy.list \
  && apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
