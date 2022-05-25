@@ -30,7 +30,6 @@ RUN set -ex \
         mopidy-spotify \
         mopidy-local \
         mopidy-mpd \
-        mopidy-tidal \
     # Clean-up
  && apt-get purge --auto-remove -y \
         gcc \

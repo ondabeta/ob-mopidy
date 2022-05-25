@@ -12,6 +12,7 @@ mopidy-moped = "*"
 mopidy-youtube = "*"
 mopidy-jellyfin = "*"
 pyopenssl = "*"
+mopidy-tidal = "*"
 
 [requires]
 python_version = "3"
