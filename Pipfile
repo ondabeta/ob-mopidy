@@ -12,7 +12,7 @@ mopidy-moped = "*"
 mopidy-youtube = "*"
 mopidy-jellyfin = "*"
 pyopenssl = "*"
-python-tidal = {git = "https://github.com/BlackLight/python-tidal.git", editable = true, ref = "pagination-support"}
+tidalapi = {git = "https://github.com/BlackLight/python-tidal.git", editable = true, ref = "pagination-support"}
 mopidy-tidal = "*"
 
 [requires]
