@@ -39,8 +39,15 @@ RUN set -ex \
 
 COPY Pipfile /
 
+
 RUN set -ex \
- && pipenv lock && pipenv install --system --deploy
+ && pipenv lock 
+
+RUN set -ex \ 
+ && pipenv install --system --deploy
+
+RUN set -ex \ 
+ && pip install git+https://github.com/BlackLight/python-tidal.git@pagination-support#egg=tidalapi 
 
 RUN set -ex \
  && mkdir -p /var/lib/mopidy/.config \
