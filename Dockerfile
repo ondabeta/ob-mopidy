@@ -27,7 +27,6 @@ RUN set -ex \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         mopidy \
         mopidy-soundcloud \
-        mopidy-spotify \
         mopidy-local \
         mopidy-mpd \
         git \

@@ -16,5 +16,6 @@ before_script:
 build:
   stage: build
   script:
-    - docker build --pull -f Dockerfile -t $CONTAINER_RELEASE_IMAGE .
-    - docker push $CONTAINER_RELEASE_IMAGE
+    - docker buildx create --name multiarch --driver docker-container --use || true
+    - docker buildx inspect --bootstrap
+    - docker buildx build --pull -f Dockerfile --platform linux/amd64,linux/arm64 --push -t $CONTAINER_RELEASE_IMAGE .
